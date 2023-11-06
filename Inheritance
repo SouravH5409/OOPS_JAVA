@@ -1,0 +1,125 @@
+import java.util.Scanner;
+
+// Employee class
+class Emplo {
+    String name;
+    int age;
+    String phoneNumber;
+    String address;
+    double salary;
+
+    // Constructor for Emplo
+    public Emplo(String name, int age, String phoneNumber, String address, double salary) {
+        this.name = name;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.salary = salary;
+    }
+
+    // Method to print salary
+    public void printSalary() {
+        System.out.println("Salary: " + salary);
+    }
+}
+
+// Officer class inherits from Employee
+class Officer extends Emplo {
+    String specialization;
+
+    // Constructor for Officer
+    public Officer(String name, int age, String phoneNumber, String address, double salary, String specialization) {
+        super(name, age, phoneNumber, address, salary);
+        this.specialization = specialization;
+    }
+
+    // Method to print Officer's details
+    public void printDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Phone Number: " + phoneNumber);
+        System.out.println("Address: " + address);
+        System.out.println("Specialization: " + specialization);
+        printSalary();
+    }
+}
+
+// Manager class inherits from Emplo
+class Manager extends Emplo {
+    String department;
+
+    // Constructor for Manager
+    public Manager(String name, int age, String phoneNumber, String address, double salary, String department) {
+        super(name, age, phoneNumber, address, salary);
+        this.department = department;
+    }
+
+    // Method to print Manager's details
+    public void printDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Phone Number: " + phoneNumber);
+        System.out.println("Address: " + address);
+        System.out.println("Department: " + department);
+        printSalary();
+    }
+}
+
+public class Employee {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get user input for Officer
+        System.out.println("Enter Officer's Information:");
+        System.out.print("Name: ");
+        String officerName = scanner.nextLine();
+        System.out.print("Age: ");
+        int officerAge = scanner.nextInt();
+        scanner.nextLine(); //Consume the newline character
+        System.out.print("Phone Number: ");
+        String officerPhone = scanner.nextLine();
+        System.out.print("Address: ");
+        String officerAddress = scanner.nextLine();
+        System.out.print("Salary: ");
+        double officerSalary = scanner.nextDouble();
+        scanner.nextLine(); // Consume the newline character
+        System.out.print("Specialization: ");
+        String officerSpecialization = scanner.nextLine();
+
+        // Create an Officer object with user input
+        Officer officer = new Officer(officerName, officerAge, officerPhone, officerAddress, officerSalary, officerSpecialization);
+
+        // Get user input for Manager
+        System.out.println("\nEnter Manager's Information:");
+        System.out.print("Name: ");
+        String managerName = scanner.nextLine();
+        System.out.print("Age: ");
+        int managerAge = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+        System.out.print("Phone Number: ");
+        String managerPhone = scanner.nextLine();
+        System.out.print("Address: ");
+        String managerAddress = scanner.nextLine();
+        System.out.print("Salary: ");
+        double managerSalary = scanner.nextDouble();
+        scanner.nextLine(); // Consume the newline character
+        System.out.print("Department: ");
+        String managerDepartment = scanner.nextLine();
+
+        // Create a Manager object with user input
+        Manager manager = new Manager(managerName, managerAge, managerPhone, managerAddress, managerSalary, managerDepartment);
+
+        // Close the scanner
+        scanner.close();
+
+        // Print Officer's details
+        System.out.println("\nOfficer Details:");
+        officer.printDetails();
+
+        System.out.println();
+
+        // Print Manager's details
+        System.out.println("Manager Details:");
+        manager.printDetails();
+    }
+}
