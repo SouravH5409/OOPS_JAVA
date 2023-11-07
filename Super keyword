@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.Scanner;
+public class EMPLOYEE{
+	//for displaying
+	public void Display(){
+		System.out.println("Class Employee");
+		}
+	public void Calc_Salary(){
+		System.out.println("Salary of Employee :10000");
+		}
+	}
+class Engineer extends EMPLOYEE{
+	public void Display(){
+		System.out.println("Class Engineer");
+		super.Display();
+		}
+	public void Calc_Salary(){
+	System.out.println("Salary of Engineer:2000");
+	super.Calc_Salary();
+	}
+}
+class Employee_Salary{
+	public static void main (String args[]){
+	Engineer e=new Engineer();
+	e.Display();
+	e.Calc_Salary();
+	}
+}
