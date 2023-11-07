@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class FindArea{
+	double area(float r){
+		return 3.14*r*r;
+		}
+	float area(float l,float b){
+		return l*b;
+		}
+	double area(float a, float b, float c){
+		float s=(a+b+c)/2;
+		return Math.sqrt(s*(s-a)*(s-b)*(s-c));
+		}
+	}
+class Area{
+	public static void main(String args[]){
+		float s1,s2,s3;
+		Scanner obj=new Scanner(System.in);
+		FindArea a = new FindArea();
+		System.out.println("Enter sides of triangle");
+		s1=obj.nextFloat();
+		s2=obj.nextFloat();
+		s3=obj.nextFloat();
+		System.out.println("Area of Triangle :" +a.area(s1,s2,s3));
+		System.out.println("Enter length and breadth of rectangle");
+		s1=obj.nextFloat();
+		s2=obj.nextFloat();
+		System.out.println("Area of Rectangle :" +a.area(s1,s2));		
+		System.out.println("Enter radius of Circle");
+		s1=obj.nextFloat();
+		System.out.println("Area of Circle :" +a.area(s1));
+	}
+}				
