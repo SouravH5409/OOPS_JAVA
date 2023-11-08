@@ -1,0 +1,14 @@
+
+class Test_Garbage{
+    public void finalize(){
+        System.out.println("Garbage Collected");
+    }
+    public static void main(String[] args) {
+        Test_Garbage a1 = new Test_Garbage();
+        Test_Garbage a2 = new Test_Garbage();
+        a1=null;
+        a2=null;
+     System.gc();
+    }
+}
+    
