@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+// Sports interface
+interface Sports {
+    float sportwt = 6.0F; // final variable
+
+    void putwt(); // abstract method
+}
+
+// Student class
+class Student {
+    int rollnumber; // member variable
+
+    void getNumber() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Roll Number: ");
+        rollnumber = scanner.nextInt();
+    }
+
+    void putNumber() {
+        System.out.println("Rollno: " + rollnumber);
+    }
+}
+
+// Test class (subclass of Student) with Sports interface
+class Test extends Student implements Sports {
+    float term1, term2; // member variables for term marks
+
+    void getMarks() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Marks for Term 1: ");
+        term1 = scanner.nextFloat();
+
+        System.out.print("Enter Marks for Term 2: ");
+        term2 = scanner.nextFloat();
+    }
+
+    void putMarks() {
+        System.out.println("Marks obtained");
+        System.out.println("Term 1=" + term1);
+        System.out.println("Term 2=" + term2);
+    }
+
+    // Implementation of the putwt() method from the Sports interface
+    public void putwt() {
+        System.out.println("Sports weightage=" + sportwt);
+    }
+}
+
+// Results class that derives from Test class
+class Results extends Test {
+    void displayResult() {
+        putNumber();
+        putMarks();
+        putwt();
+
+        // Calculate total score
+        float totalScore = term1 + term2 + sportwt;
+        System.out.println("Total Score=" + totalScore);
+    }
+}
+
+// Main class for testing
+class Main {
+    public static void main(String[] args) {
+        Results result = new Results();
+        result.getNumber();
+        result.getMarks();
+        result.displayResult();
+    }
+}
