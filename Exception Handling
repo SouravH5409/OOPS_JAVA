@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.io.*;
+public class ExceptionHandling{
+	public static void array(int arr[], int n, int index, int num)throws ArrayIndexOutOfBoundsException{
+		arr[index]=num;
+		}
+	public static void main(String[] args){
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the size of array");
+		int n=s.nextInt();
+		int arr[]= new int [n];
+		s.nextLine();
+		System.out.println("Enter index");
+		int index=s.nextInt();
+		s.nextLine();
+		System.out.println("Enter the value");
+		int num=s.nextInt();
+		if(index>n){
+			throw new ArrayIndexOutOfBoundsException("Array space exceeded ");
+			}
+		try{
+			
+			array(arr,n,index,num);
+			
+		}
+		catch (ArrayIndexOutOfBoundsException e){
+			System.out.println(e.getMessage());
+			}
+		finally{
+				System.out.println("Element is " +arr[index]);
+				System.out.println("End of program...");
+			}
+		}
+	  }
+		
+		
+		
