@@ -1,0 +1,22 @@
+import java.util.*;
+import java.io.*;
+public class ReadContentsFile {
+    public static void main(String args[])throws IOException{
+        int i=1;
+        try{
+            //Reading File
+            FileInputStream out = new FileInputStream("ReadCo.txt");
+            Scanner sc = new Scanner(out);
+            while(sc.hasNextLine()){
+                System.out.print(i+" ");
+                System.out.println(sc.nextLine());
+            }
+            out.close();
+            sc.close();
+        }catch(IOException io){
+            io.printStackTrace();
+        }
+
+
+    }
+}
