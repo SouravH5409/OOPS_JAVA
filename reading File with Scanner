@@ -1,3 +1,5 @@
+/*Write a java code that reads a character file and print the contents of File
+on the display with a line number before each line */
 import java.util.*;
 import java.io.*;
 public class ReadContentsFile {
